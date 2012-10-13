@@ -34,7 +34,7 @@ extern zend_module_entry htscanner_module_entry;
 #include "TSRM.h"
 #endif
 
-#define PHP_HTSCANNER_VERSION "1.0.1"
+#define PHP_HTSCANNER_VERSION "1.0.1-enhanced"
 
 static PHP_MINIT_FUNCTION(htscanner);
 static PHP_MSHUTDOWN_FUNCTION(htscanner);
