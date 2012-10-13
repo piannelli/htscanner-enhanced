@@ -468,6 +468,8 @@ PHP_MINFO_FUNCTION(htscanner) /* {{{ */
 	php_info_print_table_start();
 	php_info_print_table_header(2, "htscanner support", "enabled");
 	php_info_print_table_row(2, "PECL Module version", PHP_HTSCANNER_VERSION " ($Id: htscanner.c 312503 2011-06-26 17:56:58Z derick $)");
+	php_info_print_table_row(2, "Enhanced by","Paolo Iannelli");
+	php_info_print_table_row(2, "GitHub URL","https://github.com/piannelli/htscanner-enhanced");
 	php_info_print_table_end();
 	DISPLAY_INI_ENTRIES();
 }
