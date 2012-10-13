@@ -1,0 +1,62 @@
+htscanner
+=========
+Description
+-----------
+
+When using a cgi version of php (plain old cgi or fast-cgi) apache can't pass
+any php settings from htaccess files it parses. This can be solved by giving
+each user it's own php.ini file, but I didn't like that solution.
+This extension parses these configuration files (in most cases .htaccess) and
+changes the settings. It will search all directories for a configuration file
+from the docroot until the directory where the request scripts is found.
+
+Note: When you don't load the mod_php module in apache, apache will give a 500
+error when it finds an htaccess file with a php_* directive. You can prevent
+this by using a diffirent file for php or by putting:
+	<IfModule mod_php5.c>
+		php_value	foo	bar
+	</IfModule>
+around the settings. This way apache will ignore them.
+
+If for some reasons you like to allow your users to have .htaccess files
+without <IfModule mod_php5.c>, you can use the mod_htscanner.c (Apache 1.x)
+or mod_htscanner2.c (Apache 2.x) module provided with the package.
+
+Changelog
+---------
+
+0.5.0 and later changelog is visible in the package.xml or on
+http://pecl.php.net/htscanner
+
+Version	    0.4 08-11-2005
+    - Some setting weren't interpreted correctly
+
+Version	    0.3 06-11-2005
+    - Added debug code (set env PHP_HTSCANNER_DEBUG)
+    - Fixed bug with some paths
+    - Some code cleanups
+
+Version     0.2 05-11-2005
+    - Parser can handle tabs and whitespaces in a directive
+
+Version 	0.1	02-10-2005
+	- First release
+
+Install
+-------
+
+Make sure you have the development package installed if you installed
+php from a binary package.
+
+* Run phpize in the htscanner directory. Use the phpize script from the php
+	version you wish to compile htscanner for.
+* run the configure script the phpize created with --enable-htscanner
+* run make
+* run make install or copy the modules/htscanner.so file to the php
+	extension directory
+* copy the htscanner.ini configuration file to the php conf.d directory. If
+	your php version doesn't support that (e.g. Suse) then you can
+	add the settings from htscanner.ini to your php.ini
+
+For questions or request mail me:
+Pierre-A. Joye <pierre@php.net>

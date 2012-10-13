@@ -1,0 +1,38 @@
+|----------------------------------------------------------------------|
+
+TODO:
+
+Support for all ini options
+Requires either a merge or change the order of the init sections. As it
+is technically possible, it requires some work on other extensions (like
+session) and will break binary compatibility.
+NB: it will be usefull for unicode to set the default enconding
+NB#2: __NOT__ for the crappy flag
+
+
+* ISP options
+
+Add virtual host like options:
+
+ * a config file to define the vhost options for a given path (virtual
+   host)
+   ex: open_basedir, safemode, tmp dir or disable_functions
+
+ * list of allowed (or not allowed) options, like disable_functions but 
+   for the ini settings.
+   
+These options are read and permanently cached at INIT (aka MINIT or 
+sapi init) time and cached. What would rock is to have a 
+`kill -HUP`-like to reload it without having to restart the server.
+
+A possible solution could be to use a single file (same dir as ini_dir):
+php.vhost.ini:
+[/path/a/b/c]
+option1 "abc"
+
+[/path/a/b/d]
+option1 "abcd"
+
+[/path/a/b/e]
+option1 "abcde"
+

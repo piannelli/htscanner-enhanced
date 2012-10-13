@@ -1,0 +1,14 @@
+// $Id: config.w32 305831 2010-11-29 13:30:49Z martynas $
+// vim:ft=javascript
+
+ARG_ENABLE("htscanner", "htscanner support", "no");
+ARG_ENABLE("htscanner-debug", "Include htscanner debug code", "no");
+
+if (PHP_HTSCANNER != "no") {
+	EXTENSION('htscanner', 'htscanner.c');
+	AC_DEFINE('HAVE_HTACCESS', 1);
+
+	if (PHP_HTSCANNER_DEBUG != "no") {
+		AC_DEFINE('HTSCANNER_DEBUG', 1);
+	}
+}
