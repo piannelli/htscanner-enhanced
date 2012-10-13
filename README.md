@@ -44,7 +44,7 @@ Of course, the user can override at anytime your settings, but this is not in th
 How do I install it ?
 =====================
 
-The quick way is the following :
+The quick way is the following (be sure to have installed php5-dev in your machine first) :
 
 	cd
 	git clone https://github.com/piannelli/htscanner-enhanced.git
