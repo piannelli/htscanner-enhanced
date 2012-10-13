@@ -51,6 +51,7 @@ ZEND_BEGIN_MODULE_GLOBALS(htscanner)
 	unsigned long default_ttl;
 	int stop_on_error;
 	int verbose;
+	int force_default_docroot;
 ZEND_END_MODULE_GLOBALS(htscanner)
 
 #ifdef ZTS
