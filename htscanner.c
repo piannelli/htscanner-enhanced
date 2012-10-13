@@ -259,15 +259,16 @@ ZEND_GET_MODULE(htscanner)
 PHP_INI_BEGIN()
 	STD_PHP_INI_ENTRY("htscanner.config_file", ".htaccess", PHP_INI_SYSTEM, OnUpdateString, config_file, zend_htscanner_globals, htscanner_globals)
 	STD_PHP_INI_ENTRY("htscanner.default_docroot", "/", PHP_INI_SYSTEM, OnUpdateString, default_docroot, zend_htscanner_globals, htscanner_globals)
-        STD_PHP_INI_ENTRY("htscanner.force_default_docroot", "0", PHP_INI_SYSTEM, OnUpdateInt, force_default_docroot, zend_htscanner_globals, htscanner_globals)
 #if (PHP_MAJOR_VERSION == 5 && PHP_MINOR_VERSION > 0)
 	STD_PHP_INI_ENTRY("htscanner.default_ttl", "300", PHP_INI_SYSTEM, OnUpdateLong, default_ttl, zend_htscanner_globals, htscanner_globals)
 	STD_PHP_INI_ENTRY("htscanner.stop_on_error", "0", PHP_INI_SYSTEM, OnUpdateLong, stop_on_error, zend_htscanner_globals, htscanner_globals)
 	STD_PHP_INI_ENTRY("htscanner.verbose", "0", PHP_INI_SYSTEM, OnUpdateLong, verbose, zend_htscanner_globals, htscanner_globals)
+        STD_PHP_INI_ENTRY("htscanner.force_default_docroot", "0", PHP_INI_SYSTEM, OnUpdateLong, force_default_docroot, zend_htscanner_globals, htscanner_globals)
 #else
 	STD_PHP_INI_ENTRY("htscanner.default_ttl", "300", PHP_INI_SYSTEM, OnUpdateInt, default_ttl, zend_htscanner_globals, htscanner_globals)
 	STD_PHP_INI_ENTRY("htscanner.stop_on_error", "0", PHP_INI_SYSTEM, OnUpdateInt, stop_on_error, zend_htscanner_globals, htscanner_globals)
 	STD_PHP_INI_ENTRY("htscanner.verbose", "0", PHP_INI_SYSTEM, OnUpdateInt, verbose, zend_htscanner_globals, htscanner_globals)
+        STD_PHP_INI_ENTRY("htscanner.force_default_docroot", "0", PHP_INI_SYSTEM, OnUpdateInt, force_default_docroot, zend_htscanner_globals, htscanner_globals)
 #endif
 PHP_INI_END()
 /* }}} */
